@@ -50,7 +50,17 @@
 
 
 
-        <script src="../js_scripts/scripts.js"></script>
+        <script>
+        window.onload = function() {
+            var element = document.createElement("script");
+            element.src = "../js_scripts/scripts.js";
+            document.body.appendChild(element);
+        };
+        </script>
+
+
+
+
 
     </body>
 
