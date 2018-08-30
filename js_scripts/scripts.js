@@ -1,40 +1,29 @@
-$(document).ready(function(){
-    $("p").click(function(){
-        $(this).hide();
-    });
-});
-
-
-
-
-function draw1() {
-    var canvas=document.getElementById("workbench");
-    var pdf=canvas.getContext("2d");
-    var svg = new esvah;
-    img.onload = function(){ pdf.drawImage(img,0,0); };
-    img.src = "http://www.w3.org/TR/SVG11/images/painting/fillrule-evenodd.svg";
-
-
+function startGame() {
+    workbenchArea.start();
 }
 
-function drawSomethingOne(){
-
-var c=document.getElementById("workbench");
-var ctx=c.getContext("2d");
-ctx.beginPath();
-ctx.moveTo(200,250);
-ctx.bezierCurveTo(20,100,500,100,300,50);
-ctx.stroke();
-
+var workbenchArea = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = 1500;
+        this.canvas.height = 750;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+    }
 }
 
-function drawSomethingTwo(){
 
-var c=document.getElementById("workbench");
-var ctx=c.getContext("2d");
-ctx.beginPath();
-ctx.moveTo(500,250);
-ctx.bezierCurveTo(30,500,300,100,300,50);
-ctx.stroke();
+//var myGamePiece;
 
+
+
+function component(width, height, color, x, y) {
+    this.width = width;
+    this.height = height;
+    this.x = x;
+    this.y = y;
+    ctx = myGameArea.context;
+    ctx.fillStyle = color;
+    ctx.fillRect(this.x, this.y, this.width, this.height);
 }
+
